@@ -9,18 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include 'partials/metadata.html.twig' %}
 
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=share-tech-mono:400" rel="stylesheet" />
+
     <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png')|e }}" />
     <link rel="canonical" href="{{ page.canonical(true)|e }}" />
 {% endblock head %}
 
 {% block stylesheets %}
-    {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %}
-    {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
-    {% do assets.addCss('theme://css/custom.css', 98) %}
-{% endblock %}
-
-{% block javascripts %}
-    {% do assets.addJs('jquery', 100) %}
+    {% do assets.addCss('theme://css/normalize.css', 98) %}
 {% endblock %}
 
 {% block assets deferred %}
@@ -31,19 +28,7 @@
 <body id="top" class="{{ page.header.body_classes|e }}">
 
 {% block header %}
-    <div class="header">
-        <div class="wrapper padding">
-            <a class="logo left" href="{{ home_url|e }}">
-                <i class="fa fa-rebel"></i>
-                {{ config.site.title|e }}
-            </a>
-            {% block header_navigation %}
-            <nav class="main-nav">
-                {% include 'partials/navigation.html.twig' %}
-            </nav>
-            {% endblock %}
-        </div>
-    </div>
+    {% include 'partials/header.html.twig' %}
 {% endblock %}
 
 {% block body %}
@@ -55,11 +40,6 @@
 {% endblock %}
 
 {% block footer %}
-    <div class="footer text-center">
-        <div class="wrapper padding">
-            <p><a href="https://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="https://trilby.media">Trilby Media, LLC</a>.</p>
-        </div>
-    </div>
 {% endblock %}
 
 {% block bottom %}

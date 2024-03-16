@@ -1,0 +1,7 @@
+<div class="columns">
+    {% for column in page.content | split('<hr />') %}
+        <div class="one-third">
+            {{ column | raw }}
+        </div>
+    {% endfor %}
+</div>

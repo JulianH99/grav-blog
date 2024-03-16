@@ -1,0 +1,10 @@
+{# Home template, modular page #}
+
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+    {% for module in page.collection() %}
+        <div id="{{ module.menu|hyphenize }}"></div>
+        {{ module.content|raw }}
+    {% endfor %}
+{% endblock %}
