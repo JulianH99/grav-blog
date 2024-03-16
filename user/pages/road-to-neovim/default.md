@@ -1,7 +1,7 @@
 ---
-Title: Road to neovim
+title: Road to neovim
 taxonomy:
-    Category: blog
+    category: blog
 ---
 
 
