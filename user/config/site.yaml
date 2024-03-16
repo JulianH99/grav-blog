@@ -1,0 +1,11 @@
+title: Programmer by day, batman by night
+
+author:
+  name: Julián Barrios
+  email: 'juliancorredor99@protonmail.com'
+
+metadata:
+    description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+
+taxonomies: [blog]
+
