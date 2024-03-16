@@ -1,5 +1,5 @@
 
-## Working with
+### Working with
 
 - Javascript/Typescript
 - Go
@@ -7,14 +7,14 @@
 - PHP
 
 ---
-## Passionate for
+### Passionate for
 
 - Literature
 - Food
 - Movies/series
 
 ---
-## Looking to learn more about
+### Looking to learn more about
 - AI
 - Rust (yes, I know)
 - Kubernetes

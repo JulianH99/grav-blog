@@ -9,15 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include 'partials/metadata.html.twig' %}
 
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=share-tech-mono:400" rel="stylesheet" />
-
     <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png')|e }}" />
     <link rel="canonical" href="{{ page.canonical(true)|e }}" />
+    <link href="https://api.fontshare.com/v2/css?f[]=tabular@400&f[]=alpino@400,700&display=swap" rel="stylesheet">
 {% endblock head %}
 
 {% block stylesheets %}
     {% do assets.addCss('theme://css/normalize.css', 98) %}
+    {% do assets.addCss('theme://css/root.css') %}
+{% endblock %}
+
+{% block javascripts %}
+    {% do assets.addJs('theme://js/theme-switcher.js') %}
 {% endblock %}
 
 {% block assets deferred %}
@@ -28,13 +31,15 @@
 <body id="top" class="{{ page.header.body_classes|e }}">
 
 {% block header %}
-    {% include 'partials/header.html.twig' %}
+    <div class="wrapper">
+        {% include 'partials/header.html.twig' %}
+    </div>
 {% endblock %}
 
 {% block body %}
     <section id="body">
         <div class="wrapper padding">
-        {% block content %}{% endblock %}
+            {% block content %}{% endblock %}
         </div>
     </section>
 {% endblock %}

@@ -1,3 +1,26 @@
-{% for p in page.collection %}
-    {{ p.summary | raw }}
-{% endfor %}
+{% set title = page.title %}
+{% set collection = page.collection %}
+{% set display_type = page.header.display %}
+
+
+{% do assets.addCss('theme://css/modules/collection-list.css') %}
+
+<div class="collection-container {% if display_type %}{{ display_type }}{% endif %}">
+
+    <h2>{{ title }}</h2>
+
+
+    <div class="collection__list">
+        {% for item in page.collection %}
+            <article class="collection-item">
+                <h1 class="item__title">{{ item.title }}</h1>
+                <div class="item__summary">{{ item.summary | raw }}</div>
+
+                <a href="{{ item.url }}" class="item__link">Read more</a>
+            </article>
+        {% endfor %}
+    </div>
+
+    <a href="{{ url('blog')|e }}" class="collection__link">View all</a>
+
+</div>

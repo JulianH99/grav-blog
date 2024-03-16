@@ -1,0 +1,20 @@
+.collection__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-container.grid .collection__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 24px;
+}
+
+.collection-item .item__title {
+  font-size: 1.5em;
+}
+
+.collection__link {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 1.5em;
+}

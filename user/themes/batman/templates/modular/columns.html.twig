@@ -1,6 +1,11 @@
+{% block stylesheets %}
+    {% do assets.addCss('theme://css/modules/columns.css') %}
+{% endblock %}
+
+
 <div class="columns">
     {% for column in page.content | split('<hr />') %}
-        <div class="one-third">
+        <div class="column">
             {{ column | raw }}
         </div>
     {% endfor %}

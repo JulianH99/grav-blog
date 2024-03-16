@@ -1,14 +1,23 @@
+{% do assets.addCss('theme://css/header.css') %}
+
+
+
 <div class="header">
     <div class="header-inner">
-        <img src="" alt="Page icon">
+        <img src="https://picsum.photos/200/200" alt="Page Icon"
+        class="header__icon">
 
         <span class="header__text"
             data-light="Developer by day"
             data-dark="Batman by night">
             Developer by day
         </span>
-        <button>
+        <button class="header__theme-switcher"
+            data-light="{{ url('theme://images/moon-icon.png') | e }}"
+            data-dark="{{ url('theme://images/sun-icon.png') | e }}">
             <img src="" alt="theme-icon">
         </button>
     </div>
 </div>
+
+
